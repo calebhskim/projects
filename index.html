@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Projects</title>
+  <meta name="description" content="Projects">
+  <meta name="author" content="Caleb Kim">
+
+  <link rel="stylesheet" href="style.css" type="text/css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <div class="container">
+    <div id="projects"></div>
+  </div>
+
+  <script src="particles.js"><script/>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+    var left = {
+      r: 17,
+      g: 153,
+      b: 142,
+    };
+    var right = {
+      r: 56,
+      g: 239,
+      b: 125,
+    };
+    var projects = [
+      {
+        title: 'Connect Four',
+        github: 'https://github.com/calebhskim/connect-four/',
+        url: 'https://calebhskim.github.io/connect-four/',
+        class: 'connectfour',
+      },
+      {
+        title: 'Polyrides',
+        github: 'https://github.com/calebhskim/poly-rides-web/',
+        url: 'https://polyridesweb.firebaseapp.com/',
+        class: 'polyrides',
+      },
+      {
+        title: 'grade-cstaley',
+        github: 'https://github.com/calebhskim/grade-cstaley/',
+        url: 'https://calebhskim.github.io/grade-cstaley/',
+        class: 'gradecstaley',
+      },
+    ];
+
+    (function() {
+      projects.forEach(function(project, index) {
+        var gradient = index / projects.length;
+        const r = Math.floor(left.r - gradient * (left.r - right.r));
+        const g = Math.floor(left.g - gradient * (left.g - right.g));
+        const b = Math.floor(left.b - gradient * (left.b - right.b));
+        const htmlString = `
+          <div class="project" style="background-color:rgb(${r},${g},${b})">
+            <a href="${project.url}" target="APP_${project.title}">
+              <div class="${project.class}">
+                ${project.title}
+              </div>
+            </a>
+            <a href="${project.github}" target="GITHUB_POLYRIDES">
+              <svg viewBox='0 0 512 512'>
+                <path d='M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z' />
+              </svg>
+            </a>
+          </div>
+        `;
+        var div = document.createElement('div');
+        div.innerHTML = htmlString.trim();
+        document.getElementById('projects').appendChild(div);
+      });
+    })();
+  </script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          },
+          "image": {
+            "src": "img/github.svg",
+            "width": 100,
+            "height": 100
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>

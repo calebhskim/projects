@@ -1,2 +1,2 @@
-# projects
-Various projects
+# calebhskim.github.io
+Projects
