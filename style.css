@@ -111,7 +111,7 @@ svg:hover {
   width: 100vw;
 }
 
-.connectfour {
+.card {
   display: flex;
   height: 150px;
   width: 150px;
@@ -123,22 +123,4 @@ svg:hover {
 .connectfour:hover {
   cursor: pointer;
   content: url('connectfour.gif');
-}
-
-.polyrides {
-  display: flex;
-  height: 150px;
-  width: 150px;
-  color: white;
-  justify-content: center;
-  align-items: center;
-}
-
-.gradecstaley {
-  display: flex;
-  height: 150px;
-  width: 150px;
-  color: white;
-  justify-content: center;
-  align-items: center;
 }
